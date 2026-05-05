@@ -1,0 +1,66 @@
+#include <stdio.h>
+
+// Function to calculate BMI
+float calculateBMI(float weight, float height) {
+    return weight / (height * height);
+}
+
+// Function to display health status
+void displayStatus(float bmi, int heartRate) {
+    printf("\n--- Health Report ---\n");
+
+    printf("BMI: %.2f\n", bmi);
+
+    if (bmi < 18.5)
+        printf("BMI Status: Underweight\n");
+    else if (bmi >= 18.5 && bmi < 24.9)
+        printf("BMI Status: Normal\n");
+    else if (bmi >= 25 && bmi < 29.9)
+        printf("BMI Status: Overweight\n");
+    else
+        printf("BMI Status: Obese\n");
+
+    printf("Heart Rate: %d bpm\n", heartRate);
+
+    if (heartRate < 60)
+        printf("Heart Rate Status: Low\n");
+    else if (heartRate <= 100)
+        printf("Heart Rate Status: Normal\n");
+    else
+        printf("Heart Rate Status: High\n");
+}
+
+// Main function
+int main() {
+    char name[50];
+    int age;
+    float weight, height;
+    int heartRate;
+
+    printf("=== Health Monitoring System ===\n");
+
+    // Input
+    printf("Enter your name: ");
+    scanf("%s", name);
+
+    printf("Enter age: ");
+    scanf("%d", &age);
+
+    printf("Enter weight (kg): ");
+    scanf("%f", &weight);
+
+    printf("Enter height (meters): ");
+    scanf("%f", &height);
+
+    printf("Enter heart rate (bpm): ");
+    scanf("%d", &heartRate);
+
+    // Calculate BMI
+    float bmi = calculateBMI(weight, height);
+
+    // Output
+    printf("\nHello, %s (Age: %d)\n", name, age);
+    displayStatus(bmi, heartRate);
+
+    return 0;
+}
