@@ -1,129 +1,75 @@
-# course-project-02
-# 🏥 Health Monitoring System (C)
+C
+📌 Overview
+This project is a simple Health Monitoring System developed using C Language and Binary Search Tree (BST) Data Structure.
+The system stores patient details and automatically calculates BMI (Body Mass Index) to monitor health conditions. ⚕️
 
-A simple console-based Health Monitoring System written in C that calculates BMI and analyzes basic health parameters like heart rate.
+✨ Features
+✅ Add Patient Records
+✅ Store Data using Binary Search Tree
+✅ Calculate BMI Automatically
+✅ Display Patient Health Status
+✅ Simple Menu Driven Program
 
----
+🛠️ Technologies Used
 
-## 📌 Features
 
-* 👤 User input (name, age, weight, height, heart rate)
-* ⚖️ BMI calculation
-* ❤️ Heart rate analysis
-* 📊 Health status classification
-* 🖥️ Simple and easy-to-use console interface
+💻 C Programming Language
 
----
 
-## 🧮 How It Works
+📚 Data Structures
 
-The program:
 
-1. Takes user details as input
+🌳 Binary Search Tree (BST)
 
-2. Calculates **Body Mass Index (BMI)** using:
 
-   ```
-   BMI = weight / (height * height)
-   ```
 
-3. Classifies BMI into:
+🌳 Data Structure Used
+Binary Search Tree (BST)
+BST is used to store patient records based on Patient ID.
+🚀 Advantages of BST
 
-   * Underweight
-   * Normal
-   * Overweight
-   * Obese
 
-4. Evaluates heart rate:
+Faster insertion of records
 
-   * Low (< 60 bpm)
-   * Normal (60–100 bpm)
-   * High (> 100 bpm)
 
----
+Organized data storage
 
-## 💻 Technologies Used
 
-* C Programming Language
-* Standard C Libraries (`stdio.h`)
+Easy traversal and display
 
----
 
-## ▶️ How to Run
+Efficient searching
 
-### 1. Clone the repository
 
-```
-git clone https://github.com/your-username/health-monitoring-system.git
-```
 
-### 2. Navigate to the folder
+⚖️ BMI Formula
+BMI=WeightHeight2BMI = \frac{Weight}{Height^2}BMI=Height2Weight​
+📊 BMI Categories
+BMI RangeHealth StatusLess than 18.5🥗 Underweight18.5 - 24.9✅ Normal25 - 29.9⚠️ Overweight30 and Above🚨 Obese
 
-```
-cd health-monitoring-system
-```
+📂 Program Modules
+1️⃣ Add Patient
+2️⃣ Calculate BMI
+3️⃣ Display Patient Records
+4️⃣ Exit Program
 
-### 3. Compile the program
-
-```
-gcc health.c -o health
-```
-
-### 4. Run the program
-
-```
+▶️ How to Compile and Run
+🔹 Compile the Program
+gcc health_monitoring.c -o health
+🔹 Run the Program
 ./health
-```
 
----
+💻 Sample Output
+===== HEALTH MONITORING SYSTEM =====1. Add Patient2. Display Patients3. ExitEnter your choice:
 
-## 📷 Sample Output
+🎯 Project Objective
+The main objective of this project is to demonstrate the implementation of Data Structures in healthcare applications using C programming language.
 
-```
-=== Health Monitoring System ===
-Enter your name: John
-Enter age: 22
-Enter weight (kg): 70
-Enter height (meters): 1.75
-Enter heart rate (bpm): 72
+📈 Advantages
+✨ Simple and Easy to Understand
+✨ Useful for Beginners in DSA
+✨ Real-time BMI Monitoring
+✨ Efficient Record Management
 
-Hello, John (Age: 22)
-
---- Health Report ---
-BMI: 22.86
-BMI Status: Normal
-Heart Rate: 72 bpm
-Heart Rate Status: Normal
-```
-
----
-
-## 📁 Project Structure
-
-```
-health-monitoring-system/
-│── health.c
-│── README.md
-```
-
----
-
-## 🚀 Future Improvements
-
-* Add file handling to store patient records
-* Support multiple users
-* Include blood pressure and temperature tracking
-* Create menu-driven interface
-* Add graphical interface (GUI)
-
----
-
-## 🤝 Contributing
-
-Feel free to fork this repository and improve the project. Pull requests are welcome!
-
----
-
-## 📄 License
-
-This project is open-source and available under the MIT License.
+🏁 Conclusion
+This Health Monitoring System is a simple and effective project that shows how Binary Search Trees 🌳 can be used in real-life healthcare applications for managing patient health records and BMI monitoring. ⚕️
