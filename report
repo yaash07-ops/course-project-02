@@ -1,154 +1,21 @@
-# 🏥 Health Monitoring System in C
-
-## 📄 Project Report
-
----
-
-## 1. 📌 Introduction
-
-The **Health Monitoring System** is a simple console-based application developed in the C programming language. It is designed to help users monitor basic health parameters such as Body Mass Index (BMI) and heart rate. The system provides immediate feedback about the user’s health condition based on the input data.
-
-This project demonstrates the use of fundamental C programming concepts like functions, conditional statements, and user input/output handling.
-
----
-
-## 2. 🎯 Objectives
-
-* To develop a basic health monitoring application using C
-* To calculate BMI and analyze health condition
-* To evaluate heart rate status
-* To provide a simple and user-friendly interface
-* To understand modular programming using functions
-
----
-
-## 3. 🛠️ Technologies Used
-
-* **Programming Language:** C
-* **Compiler:** GCC / Turbo C
-* **Libraries Used:** `stdio.h`
-
----
-
-## 4. ⚙️ System Design
-
-The system works in the following steps:
-
-1. Accept user details:
-
-   * Name
-   * Age
-   * Weight (kg)
-   * Height (meters)
-   * Heart Rate (bpm)
-
-2. Process the data:
-
-   * Calculate BMI using formula:
-     BMI = weight / (height × height)
-
-3. Display results:
-
-   * BMI value
-   * BMI category
-   * Heart rate status
-
----
-
-## 5. 🧮 Algorithm
-
-1. Start the program
-2. Read user inputs (name, age, weight, height, heart rate)
-3. Calculate BMI
-4. If BMI < 18.5 → Underweight
-5. Else if BMI between 18.5–24.9 → Normal
-6. Else if BMI between 25–29.9 → Overweight
-7. Else → Obese
-8. Check heart rate:
-
-   * < 60 → Low
-   * 60–100 → Normal
-   * > 100 → High
-9. Display results
-10. End program
-
----
-
-## 6. 🔄 Program Modules
-
-### 6.1 BMI Calculation Function
-
-* Calculates BMI using weight and height
-
-### 6.2 Health Status Function
-
-* Determines BMI category
-* Evaluates heart rate condition
-
-### 6.3 Main Function
-
-* Handles input/output
-* Calls other functions
-
----
-
-## 7. 📷 Sample Output
-
-```
-=== Health Monitoring System ===
-Enter your name: John
-Enter age: 22
-Enter weight (kg): 70
-Enter height (meters): 1.75
-Enter heart rate (bpm): 72
-
-Hello, John (Age: 22)
-
---- Health Report ---
-BMI: 22.86
-BMI Status: Normal
-Heart Rate: 72 bpm
-Heart Rate Status: Normal
-```
-
----
-
-## 8. ✅ Advantages
-
-* Simple and easy to use
-* Helps in basic health awareness
-* Lightweight and fast execution
-* Beginner-friendly implementation
-
----
-
-## 9. ❌ Limitations
-
-* Only supports basic parameters (BMI & heart rate)
-* No data storage or history tracking
-* No graphical user interface
-* Not suitable for medical diagnosis
-
----
-
-## 10. 🚀 Future Enhancements
-
-* Add file handling to store records
-* Include more health metrics (BP, temperature, etc.)
-* Develop GUI version
-* Add multi-user support
-* Integrate with sensors for real-time monitoring
-
----
-
-## 11. 📚 Conclusion
-
-The Health Monitoring System is a basic yet effective application that demonstrates how programming can be used for simple health analysis. It helps users understand their BMI and heart condition quickly. This project also strengthens core programming skills and lays the foundation for more advanced health-based applications.
-
----
-
-## 12. 📖 References
-
-* C Programming by Dennis Ritchie
-* GeeksforGeeks ([www.geeksforgeeks.org](http://www.geeksforgeeks.org))
-* TutorialsPoint C Programming Guide
+Health Monitoring System using DSA in C
+Introduction
+This project is a Health Monitoring System developed using C language and Binary Search Tree (BST). It stores patient information and calculates BMI automatically.
+Objectives
+1. Store patient records efficiently.
+2. Calculate BMI.
+3. Display patient health condition.
+4. Use Data Structures in real applications.
+Data Structure Used
+Binary Search Tree (BST) is used to store patient records based on Patient ID.
+BMI Formula
+BMI = Weight / (Height × Height)
+Modules
+1. Add Patient
+2. BMI Calculation
+3. Display Records
+4. Exit
+Advantages
+Easy data management, faster insertion, organized records, and simple implementation.
+Conclusion
+The Health Monitoring System is a simple and useful project that demonstrates the use of Data Structures in healthcare applications.
