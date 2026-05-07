@@ -1,66 +1,128 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-// Function to calculate BMI
-float calculateBMI(float weight, float height) {
-    return weight / (height * height);
-}
-
-// Function to display health status
-void displayStatus(float bmi, int heartRate) {
-    printf("\n--- Health Report ---\n");
-
-    printf("BMI: %.2f\n", bmi);
-
-    if (bmi < 18.5)
-        printf("BMI Status: Underweight\n");
-    else if (bmi >= 18.5 && bmi < 24.9)
-        printf("BMI Status: Normal\n");
-    else if (bmi >= 25 && bmi < 29.9)
-        printf("BMI Status: Overweight\n");
-    else
-        printf("BMI Status: Obese\n");
-
-    printf("Heart Rate: %d bpm\n", heartRate);
-
-    if (heartRate < 60)
-        printf("Heart Rate Status: Low\n");
-    else if (heartRate <= 100)
-        printf("Heart Rate Status: Normal\n");
-    else
-        printf("Heart Rate Status: High\n");
-}
-
-// Main function
-int main() {
+struct Patient {
+    int id;
     char name[50];
-    int age;
+    float weight;
+    float height;
+    float bmi;
+    struct Patient *left, *right;
+};
+
+// Create a new patient node
+struct Patient* createPatient(int id, char name[], float weight, float height) {
+    struct Patient* newNode = (struct Patient*)malloc(sizeof(struct Patient));
+
+    newNode->id = id;
+    strcpy(newNode->name, name);
+    newNode->weight = weight;
+    newNode->height = height;
+
+    // BMI Formula
+    newNode->bmi = weight / (height * height);
+
+    newNode->left = newNode->right = NULL;
+
+    return newNode;
+}
+
+// Insert patient into Binary Search Tree
+struct Patient* insertPatient(struct Patient* root, int id, char name[], float weight, float height) {
+
+    if (root == NULL) {
+        return createPatient(id, name, weight, height);
+    }
+
+    if (id < root->id) {
+        root->left = insertPatient(root->left, id, name, weight, height);
+    } else {
+        root->right = insertPatient(root->right, id, name, weight, height);
+    }
+
+    return root;
+}
+
+// Display patient records
+void displayPatients(struct Patient* root) {
+
+    if (root != NULL) {
+        displayPatients(root->left);
+
+        printf("\nPatient ID   : %d", root->id);
+        printf("\nPatient Name : %s", root->name);
+        printf("\nWeight       : %.2f kg", root->weight);
+        printf("\nHeight       : %.2f m", root->height);
+        printf("\nBMI          : %.2f", root->bmi);
+
+        // BMI Status
+        if (root->bmi < 18.5)
+            printf("\nHealth Status: Underweight\n");
+        else if (root->bmi >= 18.5 && root->bmi < 25)
+            printf("\nHealth Status: Normal\n");
+        else if (root->bmi >= 25 && root->bmi < 30)
+            printf("\nHealth Status: Overweight\n");
+        else
+            printf("\nHealth Status: Obese\n");
+
+        printf("\n-----------------------------\n");
+
+        displayPatients(root->right);
+    }
+}
+
+int main() {
+
+    struct Patient* root = NULL;
+
+    int choice, id;
+    char name[50];
     float weight, height;
-    int heartRate;
 
-    printf("=== Health Monitoring System ===\n");
+    while (1) {
 
-    // Input
-    printf("Enter your name: ");
-    scanf("%s", name);
+        printf("\n===== HEALTH MONITORING SYSTEM =====\n");
+        printf("1. Add Patient\n");
+        printf("2. Display Patients\n");
+        printf("3. Exit\n");
 
-    printf("Enter age: ");
-    scanf("%d", &age);
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
 
-    printf("Enter weight (kg): ");
-    scanf("%f", &weight);
+        switch(choice) {
 
-    printf("Enter height (meters): ");
-    scanf("%f", &height);
+            case 1:
+                printf("\nEnter Patient ID: ");
+                scanf("%d", &id);
 
-    printf("Enter heart rate (bpm): ");
-    scanf("%d", &heartRate);
+                printf("Enter Patient Name: ");
+                scanf("%s", name);
 
-    // Calculate BMI
-    float bmi = calculateBMI(weight, height);
+                printf("Enter Weight (kg): ");
+                scanf("%f", &weight);
 
-    // Output
-    printf("\nHello, %s (Age: %d)\n", name, age);
-    displayStatus(bmi, heartRate);
+                printf("Enter Height (m): ");
+                scanf("%f", &height);
+
+                root = insertPatient(root, id, name, weight, height);
+
+                printf("\nPatient Added Successfully!\n");
+                break;
+
+            case 2:
+                printf("\n===== PATIENT RECORDS =====\n");
+                displayPatients(root);
+                break;
+
+            case 3:
+                printf("\nExiting Program...\n");
+                exit(0);
+
+            default:
+                printf("\nInvalid Choice!\n");
+        }
+    }
 
     return 0;
 }
